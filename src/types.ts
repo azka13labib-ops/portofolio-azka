@@ -6,7 +6,7 @@ export type NavLink = {
 export type Project = {
   number: string;
   title: string;
-  desc: string;
+  desc: string[];
   tags: string[];
   url: string;
   previewColor: string;
@@ -25,7 +25,7 @@ export type Tool = {
 export type JourneyItem = {
   yearRange: string;
   title: string;
-  desc: string;
+  desc: string[];
   tags: string[];
   side: "left" | "right";
   photoPlaceholder: string;

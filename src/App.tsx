@@ -29,7 +29,7 @@ type Profile = {
 type Project = {
   no: string;
   title: string;
-  desc: string;
+  desc: string[];
   tags: string[];
   url: string;
   previewStyle: string;
@@ -48,7 +48,7 @@ type Tool = {
 type JourneyItem = {
   yearRange: string;
   title: string;
-  desc: string;
+  desc: string[];
   tags: string[];
   side: 'left' | 'right';
 };
@@ -80,31 +80,40 @@ const PROJECTS: Project[] = [
   {
     no: '01',
     title: 'ITB WIGA Website Redesign',
-    desc: 'Platform akademik modern dengan antarmuka yang bersih dan responsif. Mengutamakan kemudahan navigasi untuk menyajikan data universitas, fasilitas, dan pembaruan berita secara interaktif',
+    desc: [
+      'Website akademik modern dengan fokus pada <strong>kemudahan navigasi</strong> dan penyajian data interaktif.',
+      'Dioptimalkan untuk <strong>responsivitas penuh</strong> di berbagai perangkat.',
+    ],
     tags: ['Education', 'CMS', 'UI/UX'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0f172a, #1e3a8a, #0b1220)',
     previewImage: campusPreview,
     role: 'Front-End & UI/UX Designer',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    impact: ['Sistem Navigasi Intuitif untuk berbagai demografi pengguna (dosen, mahasiswa, pengunjung).', 'Layout lebih konsisten', 'Responsivitas Penuh yang dioptimalkan untuk mobile dan desktop.'],
+    impact: ['Navigasi intuitif untuk <strong>mahasiswa & dosen</strong>.', 'Layout konsisten dengan <strong>responsivitas penuh</strong>.'],
   },
   {
     no: '02',
     title: 'AZKAAA.SYS',
-    desc: 'Dasbor sistem manajemen inventaris dan perdagangan canggih yang dirancang untuk presisi stok, transaksi e-commerce yang mulus, dan efisiensi maksimum dengan jaminan keamanan dan kecepatan.',
+    desc: [
+      'Dashboard inventaris canggih untuk <strong>manajemen stok</strong> dan transaksi e-commerce yang super cepat.',
+      'Sistem terintegrasi dengan jaminan <strong>keamanan data</strong> dan efisiensi maksimum.',
+    ],
     tags: ['Brand', 'Ecommerce', 'Dashboard'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0b1120, #1d4ed8, #0f172a)',
     previewImage: kopiPreview,
     role: 'Fullstack',
     stack: ['React', 'Tailwind', 'PHP'],
-    impact: ['Latensi Transaksi 0ms (Ultra-low Latency with 0ms Transaction Delay).', 'Modul Kontrol Inventaris, Perdagangan, dan Kontrol yang Terintegrasi.', 'Keamanan Data yang Terjamin (Guaranteed Data Security).'],
+    impact: ['<strong>Ultra-low latency</strong> untuk transaksi instan.', 'Sistem <strong>kontrol inventaris</strong> terintegrasi secara aman.'],
   },
   {
     no: '03',
     title: 'Azkatravel - Premium Trip Landing Page',
-    desc: 'Platform eksplorasi destinasi wisata yang dirancang dengan antarmuka modern dan menenangkan. Menghadirkan informasi itinerary dan layanan konsultasi dalam tata letak yang bersih dan intuitif.  ',
+    desc: [
+      'Landing page wisata premium dengan desain <strong>modern & clean</strong> untuk pengalaman eksplorasi terbaik.',
+      'Menghadirkan itinerary dan layanan konsultasi dalam tata letak <strong>fotografi-sentris</strong>.',
+    ],
     tags: ['Mobile', 'Product', 'App UI'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #020617, #0f172a, #2563eb)',
@@ -112,19 +121,22 @@ const PROJECTS: Project[] = [
     previewLayout: 'phone',
     role: 'Front-End Developer & UI Designer',
     stack: ['React', 'Tailwind', 'Framer'],
-    impact: ['Implementasi image text-masking tingkat lanjut pada hero section.', 'Desain tata letak yang clean, modern, dan berfokus pada fotografi destinasi.', 'Penempatan tombol Call-to-Action CTA yang strategis untuk konversi Booking & Konsultasi.'],
+    impact: ['Implementasi <strong>advanced text-masking</strong> pada Hero.', 'Optimasi <strong>CTA strategis</strong> untuk konversi booking.'],
   },
   {
     no: '04',
     title: 'Digital Game Top-Up Platform',
-    desc: 'Platform top-up game dengan antarmuka super responsif, dirancang untuk transaksi kilat dan pengalaman gaming yang seamless',
+    desc: [
+      'Platform top-up game yang dioptimalkan untuk <strong>transaksi kilat</strong> dan pengalaman gaming mulus.',
+      'Antarmuka super responsif dengan fokus pada <strong>user experience</strong> gaming.',
+    ],
     tags: ['E-COMMERCE', 'GAMING', 'Fullstack'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0b1120, #1f2937, #0b3b7a)',
     previewImage: portfolioPreview,
     role: 'UI/UX Design & Fullstack Development',
     stack: ['React', 'Tailwind', 'PHP'],
-    impact: ['Pengelolaan data transaksi yang solid dan aman di sisi backend.', 'Navigasi dinamis dan smooth berbasis komponen React.', 'Desain visual yang menarik dan modern dengan fokus pada pengalaman pengguna.'],
+    impact: ['Backend solid untuk <strong>keamanan data transaksi</strong>.', 'UI dinamis dengan <strong>React components</strong>.'],
   },
 ];
 
@@ -135,8 +147,8 @@ const TOOLS: Tool[] = [
   { name: 'Tailwind' },
   { name: 'Node.js' },
   { name: 'Python' },
-  { name: 'PHP' },
-  { name: 'Kotlin' },
+  { name: 'Laravel' },
+  { name: 'Flutter' },
   { name: 'Git' },
   { name: 'Framer' },
   { name: 'GSAP' },
@@ -150,8 +162,8 @@ const TOOL_DETAILS: Record<string, string> = {
   Tailwind: 'Styling',
   'Node.js': 'Runtime',
   Python: 'Language',
-  PHP: 'Language',
-  Kotlin: 'Mobile',
+  Laravel: 'Framework',
+  Flutter: 'Mobile',
   Git: 'Version Control',
   Framer: 'Motion',
   GSAP: 'Animation',
@@ -165,8 +177,8 @@ const TOOL_ICONS: Record<string, string> = {
   Tailwind: 'https://cdn.simpleicons.org/tailwindcss/64748b',
   'Node.js': 'https://cdn.simpleicons.org/nodedotjs/64748b',
   Python: 'https://cdn.simpleicons.org/python/64748b',
-  PHP: 'https://cdn.simpleicons.org/php/64748b',
-  Kotlin: 'https://cdn.simpleicons.org/kotlin/64748b',
+  Laravel: 'https://cdn.simpleicons.org/laravel/64748b',
+  Flutter: 'https://cdn.simpleicons.org/Flutter/64748b',
   Git: 'https://cdn.simpleicons.org/git/64748b',
   Framer: 'https://cdn.simpleicons.org/framer/64748b',
   GSAP: 'https://cdn.simpleicons.org/greensock/64748b',
@@ -177,28 +189,40 @@ const JOURNEY: JourneyItem[] = [
   {
     yearRange: '2024 - 2025',
     title: 'Front-End Explorer & System Enthusiast',
-    desc: 'Memulai perjalanan di dunia web development dengan membangun fundamental UI yang solid. Di fase ini juga aktif mengeksplorasi sistem operasi, termasuk ricing UI pada environment Linux untuk melatih sense desain.',
+    desc: [
+      'Membangun <strong>fundamental UI</strong> yang solid melalui eksperimen desain sistem.',
+      'Aktif mengeksplorasi <strong>Linux ricing</strong> untuk melatih estetika dan efisiensi workflow.',
+    ],
     tags: ['HTML', 'CSS', 'JS', 'LINUX'],
     side: 'left',
   },
   {
     yearRange: '2025 - 2026',
     title: 'Front-End & Logic Foundation',
-    desc: 'Masa di mana fokus utama adalah memperkuat fundamental web development. Banyak bereksperimen dengan struktur antarmuka, styling, dan mulai mengasah logika interaktivitas menggunakan JavaScript dan TypeScript untuk membangun fungsionalitas web yang lebih dinamis.',
+    desc: [
+      'Memperdalam logika interaktivitas menggunakan <strong>JavaScript & TypeScript</strong>.',
+      'Bereksperimen dengan <strong>struktur antarmuka dinamis</strong> untuk fungsionalitas web modern.',
+    ],
     tags: ['JAVASCRIPT', 'TYPESCRIPT', 'CSS'],
     side: 'right',
   },
   {
     yearRange: 'Awal 2026',
     title: 'Fullstack Developer',
-    desc: 'Mengembangkan keahlian ke level fullstack dengan membangun platform e-commerce (Top-Up Game). Fokus pada role-based authentication, database MySQL, dan styling efisien menggunakan framework modern.',
+    desc: [
+      'Transisi ke <strong>Fullstack Development</strong> dengan membangun platform e-commerce kompleks.',
+      'Fokus pada <strong>keamanan autentikasi</strong> dan optimasi database MySQL.',
+    ],
     tags: ['REACT', 'TAILWIND', 'MYSQL'],
     side: 'left',
   },
   {
     yearRange: '2026 - Sekarang',
     title: 'Cross-Platform Developer',
-    desc: 'Memperluas jangkauan teknologi ke pengembangan aplikasi mobile dengan Flutter, termasuk eksperimen fitur overlay/floating bubble, serta memperdalam integrasi asinkron dengan Fetch API.',
+    desc: [
+      'Eksplorasi <strong>Mobile Development</strong> dengan Flutter, fokus pada advanced overlay.',
+      'Integrasi <strong>API asinkron</strong> untuk sinkronisasi data real-time yang mulus.',
+    ],
     tags: ['FLUTTER', 'TYPESCRIPT', 'API'],
     side: 'right',
   },
@@ -1145,6 +1169,74 @@ const HeroBackdrop = ({ styleOverride, className }: HeroBackdropProps) => {
   );
 };
 
+/** Mobile nav hamburger (used by inline App navbar) */
+function MobileNavToggle({
+  items,
+  activeSection,
+  onNavigate,
+}: {
+  items: NavItem[];
+  activeSection: string;
+  onNavigate: (id: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const activeLabel = items.find((i) => i.id === activeSection)?.label || 'MENU';
+
+  return (
+    <>
+      <div className="flex w-full items-center justify-between px-3 md:hidden">
+        <span className="text-[0.7rem] font-bold tracking-[0.25em] text-slate-800 uppercase">
+          {activeLabel}
+        </span>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-900 transition focus-visible:ring-2 focus-visible:ring-sky-400"
+          aria-label="Toggle Menu"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            {isOpen ? (
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            ) : (
+              <path d="M4 8h16M4 16h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-20 left-1/2 z-40 w-[90%] -translate-x-1/2 rounded-[2rem] border border-white/60 bg-white/90 p-4 shadow-xl backdrop-blur-md md:hidden"
+          >
+            <div className="flex flex-col gap-2">
+              {items.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      onNavigate(item.id);
+                      setIsOpen(false);
+                    }}
+                    className={`rounded-xl px-4 py-3 text-left text-xs font-semibold tracking-[0.2em] transition ${
+                      isActive ? 'bg-slate-900/10 text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+
 function App() {
   const appRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -1769,7 +1861,7 @@ function App() {
   const activeIndex = Math.max(0, sectionIds.indexOf(activeSection));
 
   return (
-    <div ref={appRef} className="text-slate-900">
+    <div ref={appRef} className="overflow-x-hidden text-slate-900">
       <AnimatePresence>
         {isBooting ? (
           <motion.div
@@ -1785,9 +1877,10 @@ function App() {
 
       <nav
         aria-label="Primary"
-        className="nav-pill fixed left-1/2 bottom-5 z-50 w-[92%] max-w-4xl -translate-x-1/2 rounded-full border border-white/60 bg-white/80 px-3 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-sm md:bottom-auto md:top-6 md:w-fit md:px-4"
+        className="nav-pill fixed left-1/2 bottom-5 z-50 w-[90%] max-w-4xl -translate-x-1/2 rounded-full border border-white/60 bg-white/80 px-2 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-md md:bottom-auto md:top-6 md:w-fit md:px-4"
       >
-        <div className="flex items-center justify-between gap-2 md:gap-3">
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center justify-between gap-3">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -1801,7 +1894,7 @@ function App() {
                 whileHover={prefersReducedMotion ? undefined : { y: -2 }}
                 whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative rounded-full px-3 py-2 text-[0.7rem] font-semibold tracking-[0.25em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 md:text-[0.72rem] ${
+                className={`relative rounded-full px-3 py-2 text-[0.72rem] font-semibold tracking-[0.25em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${
                   isActive ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
@@ -1815,6 +1908,12 @@ function App() {
             );
           })}
         </div>
+        {/* Mobile nav toggle */}
+        <MobileNavToggle
+          items={NAV_ITEMS}
+          activeSection={activeSection}
+          onNavigate={handleScrollTo}
+        />
       </nav>
 
       <div className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 md:flex">
@@ -1874,19 +1973,19 @@ function App() {
         >
           <HeroBackdrop />
 
-          <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 pb-24 pt-28 md:pt-36">
+          <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-4 pb-16 pt-24 md:px-6 md:pb-24 md:pt-36">
             <div className="hero-fade">
               <p className="hero-subtitle mb-4 text-xs font-semibold uppercase tracking-[0.5em] text-slate-600">
                 {PROFILE.role}
               </p>
 
-              <h1 className="font-display text-5xl uppercase leading-[0.9] text-slate-900 sm:text-6xl md:text-7xl">
+              <h1 className="font-display text-4xl uppercase leading-[0.9] text-slate-900 sm:text-5xl md:text-7xl">
                 <span className="hero-title-main block">{heroLineOne}</span>
                 <span className="hero-title-outline block text-stroke">{heroLineTwo}</span>
               </h1>
 
               <p className="hero-subtitle mt-6 max-w-xl text-base text-slate-600 md:text-lg">
-                Crafting editorial-grade web experiences with layered motion, tactile micro-interactions, and a human-centered narrative.
+                Membangun pengalaman web <strong>editorial-grade</strong> dengan motion yang presisi dan interaksi yang <strong>berpusat pada manusia</strong>.
               </p>
 
               <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -1899,15 +1998,15 @@ function App() {
                     key={item.label}
                     whileHover={prefersReducedMotion ? undefined : { y: -6 }}
                     whileTap={prefersReducedMotion ? undefined : { scale: 0.99 }}
-                    className="hero-card rounded-2xl border border-white/70 bg-white/80 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:border-white hover:brightness-105"
+                    className="hero-card rounded-2xl border border-white/70 bg-white/80 p-4 md:p-5 shadow-[0_20px_40px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:border-white hover:brightness-105"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{item.label}</p>
-                    <p className="mt-2 text-sm font-semibold text-slate-800">{item.value}</p>
+                    <p className="text-[0.65rem] md:text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{item.label}</p>
+                    <p className="mt-1 md:mt-2 text-xs md:text-sm font-semibold text-slate-800">{item.value}</p>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="hero-marquee mt-10 rounded-full border border-white/60 bg-white/70 px-4 py-3">
+              <div className="hero-marquee mt-8 md:mt-10 rounded-full border border-white/60 bg-white/70 px-3 py-2 md:px-4 md:py-3">
                 <Marquee
                   speed={prefersReducedMotion ? 0 : 40}
                   play={!prefersReducedMotion && marqueeActive}
@@ -1926,7 +2025,7 @@ function App() {
         <section
           id="about"
           ref={registerSection('about')}
-          className="relative min-h-[80vh] scroll-mt-24 bg-white py-28 sm:min-h-[85vh] sm:py-32 lg:min-h-[90vh] lg:py-36"
+          className="relative min-h-[80vh] scroll-mt-24 bg-white py-16 sm:py-24 md:py-28 sm:min-h-[85vh] lg:min-h-[90vh]"
         >
           <div
             className="section-fade-bottom pointer-events-none absolute inset-x-0 bottom-0 h-[22vh] sm:h-[28vh]"
@@ -1959,11 +2058,11 @@ function App() {
                     data-reveal
                     data-reveal-dir="left"
                   >
-                    /// About
+                    -About
                   </p>
 
                   <h2
-                    className="about-title text-6xl font-display uppercase leading-none text-slate-900 md:text-7xl"
+                    className="about-title text-4xl sm:text-5xl font-display uppercase leading-none text-slate-900 md:text-7xl"
                     data-reveal
                     data-reveal-dir="left"
                   >
@@ -1971,18 +2070,17 @@ function App() {
                   </h2>
 
                   <p className="max-w-2xl text-base text-slate-600 md:text-lg" data-reveal data-reveal-dir="left">
-                    Hai, aku <span className="font-semibold text-slate-900">{PROFILE.name}</span>. Aku fokus membangun UI
-                    yang rapi, cepat, dan enak dipakai—dengan motion halus, whitespace yang “bernapas”, dan detail
-                    mikro-interaksi yang terasa natural.
+                    Halo, saya <span className="font-semibold text-slate-900">{PROFILE.name}</span>, seorang <strong>Fullstack Developer</strong> yang menyukai detail.
+                    Saya merancang antarmuka yang <strong>clean & intuitive</strong> menggunakan ekosistem React, Flutter, dan modern web stack.
                   </p>
 
                   <div className="mt-2 grid gap-3 sm:grid-cols-2" data-reveal data-reveal-dir="left">
-                    {[
-                      { k: 'Fokus', v: 'Motion ringan + layout editorial' },
-                      { k: 'Kekuatan', v: 'Design system, aksesibilitas, performa' },
-                      { k: 'Suka', v: 'Website produk, landing, dashboard' },
-                      { k: 'Target', v: 'UI yang konsisten & scalable' },
-                    ].map((it) => (
+                      {[
+                        { k: 'FOKUS UTAMA', v: 'Web & Mobile Full-Stack Development' },
+                        { k: 'EXPERTISE', v: 'React, Flutter, & Modern Backend Systems' },
+                        { k: 'PASSION', v: 'Membangun UI yang Clean & Impactful' },
+                        { k: 'GOAL', v: 'Aplikasi yang Scalable & Mudah Dirawat' },
+                      ].map((it) => (
                       <div key={it.k} className="rounded-2xl border border-slate-200 bg-white/70 p-4">
                         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-slate-400">{it.k}</p>
                         <p className="mt-1 text-sm font-semibold text-slate-800">{it.v}</p>
@@ -2023,7 +2121,7 @@ function App() {
                     data-reveal
                     data-reveal-dir="right"
                   >
-                    /// Projects
+                    - Projects
                   </p>
                   <p
                     className="text-2xl font-display uppercase leading-tight text-slate-700 md:text-3xl"
@@ -2069,7 +2167,7 @@ function App() {
         <section
           id="projects"
           ref={registerSection('projects')}
-          className="relative scroll-mt-24 bg-[#070a10] py-24 text-white sm:py-28"
+          className="relative scroll-mt-24 bg-[#070a10] py-16 sm:py-24 md:py-28 text-white"
         >
           <div className="projects-wipe absolute inset-0 origin-top scale-y-0 bg-slate-950" />
           <div className="pointer-events-none absolute inset-0">
@@ -2080,18 +2178,18 @@ function App() {
             </div>
           </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-6xl px-6" data-section-body>
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-4 md:px-6" data-section-body>
             <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" data-reveal-container>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400" data-reveal>
                   Selected Work
                 </p>
-                <h2 className="mt-3 text-4xl font-display uppercase md:text-5xl" data-reveal>
+                <h2 className="mt-2 text-3xl font-display uppercase md:text-5xl" data-reveal>
                   Projects
                 </h2>
               </div>
               <p className="max-w-md text-sm text-slate-300" data-reveal>
-                Pilihan project dengan storytelling, motion yang halus, dan UI system yang rapi.
+                Koleksi pilihan karya dengan fokus pada storytelling dan sistem UI yang matang.
               </p>
             </div>
 
@@ -2137,8 +2235,15 @@ function App() {
                         <span className="h-px flex-1 bg-white/10" />
                       </div>
 
-                      <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
-                      <p className="mt-2 text-sm text-slate-300">{project.desc}</p>
+                      <h3 className="mt-3 text-xl font-semibold text-white md:text-2xl">{project.title}</h3>
+                      <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                        {project.desc.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500" />
+                            <span dangerouslySetInnerHTML={{ __html: item }} />
+                          </li>
+                        ))}
+                      </ul>
 
                       <div className={`mt-4 flex flex-wrap gap-2 ${isRight ? 'lg:justify-end' : ''}`}>
                         {project.tags.map((tag) => (
@@ -2173,10 +2278,8 @@ function App() {
                             <div className="space-y-1">
                               <span className="font-semibold uppercase tracking-[0.25em] text-slate-400">Highlights</span>
                               <div className="flex flex-col gap-1">
-                                {project.impact.slice(0, 3).map((t) => (
-                                  <span key={t} className="text-slate-200">
-                                    {t}
-                                  </span>
+                                {project.impact.slice(0, 3).map((t, i) => (
+                                  <span key={i} className="text-slate-200" dangerouslySetInnerHTML={{ __html: t }} />
                                 ))}
                               </div>
                             </div>
@@ -2242,7 +2345,7 @@ function App() {
         <section
           id="tech"
           ref={registerSection('tech')}
-          className="relative min-h-[100vh] scroll-mt-24 bg-[#f8fafc] py-32 sm:py-36 lg:py-40"
+          className="relative min-h-[100vh] scroll-mt-24 bg-[#f8fafc] pt-24 pb-16 sm:pt-32 sm:pb-24 md:py-36 lg:py-40"
         >
           <div
             className="section-fade-top pointer-events-none absolute inset-x-0 top-0 h-[22vh] sm:h-[28vh]"
@@ -2267,7 +2370,7 @@ function App() {
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400" data-reveal>
                 /// Toolkit
               </p>
-              <h2 className="mt-3 text-6xl font-display font-bold uppercase leading-[0.92] text-slate-900 md:text-7xl lg:text-[6rem]">
+              <h2 className="mt-3 text-4xl sm:text-5xl font-display font-bold uppercase leading-[0.92] text-slate-900 md:text-7xl lg:text-[6rem]">
                 <span className="block" data-reveal>
                   Tech
                 </span>
@@ -2280,7 +2383,7 @@ function App() {
               </p>
             </div>
 
-            <div className="mt-4 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid gap-x-6 gap-y-4 sm:gap-x-10 sm:gap-y-6 grid-cols-2 lg:grid-cols-3">
               {TOOLS.map((tool) => {
                 const detail = TOOL_DETAILS[tool.name] ?? 'Toolkit';
                 const icon = TOOL_ICONS[tool.name];
@@ -2308,7 +2411,7 @@ function App() {
         <section
           id="journey"
           ref={registerSection('journey')}
-          className="relative scroll-mt-24 overflow-hidden bg-[#93c5fd] py-24 sm:py-28"
+          className="relative scroll-mt-24 overflow-hidden bg-[#93c5fd] py-16 sm:py-24 md:py-28"
         >
           <div
             className="section-fade-top pointer-events-none absolute inset-x-0 top-0 h-[22vh] sm:h-[28vh]"
@@ -2341,7 +2444,7 @@ function App() {
                 Journey
               </h2>
               <p className="max-w-xl text-sm text-slate-700" data-reveal>
-                Timeline singkat perjalanan skill, eksperimen, dan momen yang membentuk gaya visual.
+                Kilas balik peran, eksperimen teknis, dan momen penting yang membentuk identitas kreatif.
               </p>
             </div>
 
@@ -2355,19 +2458,26 @@ function App() {
                   return (
                     <div
                       key={item.title}
-                      className="relative grid gap-6 lg:grid-cols-[1fr_80px_1fr] lg:items-center"
+                      className="relative grid gap-4 lg:gap-6 lg:grid-cols-[1fr_80px_1fr] lg:items-center"
                       data-reveal-container
                     >
                       <motion.div
                         data-reveal
                         data-reveal-dir={isLeft ? 'left' : 'right'}
-                        className={`rounded-[2.5rem] border border-white/70 bg-white/90 p-6 shadow-[0_16px_35px_rgba(15,23,42,0.12)] ${
+                        className={`rounded-3xl lg:rounded-[2.5rem] border border-white/70 bg-white/90 p-5 lg:p-6 shadow-[0_16px_35px_rgba(15,23,42,0.12)] ${
                           isLeft ? 'lg:col-start-1' : 'lg:col-start-3'
                         }`}
                       >
                         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{item.yearRange}</p>
                         <h3 className="mt-2 text-lg font-semibold text-slate-900">{item.title}</h3>
-                        <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
+                        <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                          {item.desc.map((subItem, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-400" />
+                              <span dangerouslySetInnerHTML={{ __html: subItem }} />
+                            </li>
+                          ))}
+                        </ul>
                         <div className="mt-4 flex flex-wrap gap-2">
                           {item.tags.map((tag) => (
                             <span
@@ -2418,7 +2528,7 @@ function App() {
         </section>
 
         {/* GITHUB */}
-        <section id="github" ref={registerSection('github')} className="relative scroll-mt-24 bg-white py-24 sm:py-28">
+        <section id="github" ref={registerSection('github')} className="relative scroll-mt-24 bg-white py-16 sm:py-24 md:py-28">
           <div
             className="section-fade-top pointer-events-none absolute inset-x-0 top-0 h-[22vh] sm:h-[28vh]"
             style={fadeStyle('#93c5fd', '#ffffff')}
@@ -2450,10 +2560,10 @@ function App() {
                       />
                     </svg>
                   </span>
-                  <h2 className="text-4xl font-display uppercase text-slate-900">GitHub</h2>
+                  <h2 className="text-3xl sm:text-4xl font-display uppercase text-slate-900">GitHub</h2>
                 </div>
 
-                <h3 className="mt-2 text-4xl font-display uppercase text-stroke" data-reveal>
+                <h3 className="mt-2 text-3xl sm:text-4xl font-display uppercase text-stroke" data-reveal>
                   Activity
                 </h3>
                 <p className="mt-4 max-w-sm text-sm text-slate-600" data-reveal>

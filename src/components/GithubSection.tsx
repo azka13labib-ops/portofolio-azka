@@ -16,7 +16,7 @@ export default function GithubSection({
     <section
       id="github"
       ref={registerSection("github")}
-      className="relative scroll-mt-24 bg-white py-24 sm:py-28"
+      className="relative scroll-mt-24 bg-white py-16 sm:py-24 md:py-28"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="container relative mx-auto px-6">
@@ -53,12 +53,12 @@ export default function GithubSection({
                   />
                 </svg>
               </span>
-              <h2 className="text-4xl font-display uppercase text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-display uppercase text-slate-900">
                 GitHub
               </h2>
             </div>
             <h3
-              className="mt-2 text-4xl font-display uppercase text-stroke"
+              className="mt-2 text-3xl sm:text-4xl font-display uppercase text-stroke"
               data-reveal
             >
               Activity

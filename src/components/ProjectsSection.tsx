@@ -20,11 +20,11 @@ export default function ProjectsSection({
     <section
       id="projects"
       ref={registerSection("projects")}
-      className="relative scroll-mt-24 overflow-hidden bg-slate-950 py-24 text-white sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden bg-slate-950 py-16 sm:py-24 md:py-28 text-white"
     >
       <div className="absolute inset-0 bg-grid-dark" />
       <div className="absolute inset-0 bg-vignette" />
-      <div className="container relative mx-auto px-6">
+      <div className="container relative mx-auto px-4 md:px-6">
         <div className="absolute -top-8 left-0 text-[16vw] font-display uppercase tracking-[0.2em] text-white/5">
           Projects
         </div>
@@ -40,15 +40,14 @@ export default function ProjectsSection({
               Selected Work
             </p>
             <h2
-              className="mt-3 text-4xl font-display uppercase md:text-5xl"
+              className="mt-2 text-3xl font-display uppercase md:text-5xl"
               data-reveal
             >
               Projects
             </h2>
           </div>
           <p className="max-w-md text-sm text-slate-300" data-reveal>
-            A curated lineup of motion-led experiences with deep storytelling
-            and refined UI systems.
+            Koleksi pilihan karya dengan fokus pada storytelling dan sistem UI yang matang.
           </p>
         </div>
 
@@ -63,7 +62,7 @@ export default function ProjectsSection({
                 data-reveal-container
                 onMouseEnter={() => setActiveProject(index)}
                 onFocusCapture={() => setActiveProject(index)}
-                className="grid items-center gap-10 lg:grid-cols-[0.45fr_0.55fr]"
+                className="grid items-center gap-8 lg:gap-10 lg:grid-cols-[0.45fr_0.55fr]"
               >
                 <div
                   className={`space-y-4 ${
@@ -76,10 +75,17 @@ export default function ProjectsSection({
                     <span className="text-sky-300">{project.number}</span>
                     <span className="h-px flex-1 bg-white/10" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-white md:text-3xl">
+                  <h3 className="text-xl font-semibold text-white md:text-3xl">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-slate-300">{project.desc}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                    {project.desc.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                        <span dangerouslySetInnerHTML={{ __html: item }} />
+                      </li>
+                    ))}
+                  </ul>
                   <div
                     className={`flex flex-wrap gap-2 ${
                       isEven ? "lg:justify-start" : "lg:justify-end"

@@ -139,13 +139,13 @@ export default function HeroSection({
       </div>
 
       {/* Content */}
-      <div className="container relative mx-auto flex min-h-screen flex-col justify-center px-6 pb-24 pt-28 md:pt-36">
+      <div className="container relative mx-auto flex min-h-screen flex-col justify-center px-4 pb-16 pt-24 md:px-6 md:pb-24 md:pt-36">
         <div className="max-w-4xl">
           <p className="hero-subtitle mb-4 text-xs font-semibold uppercase tracking-[0.5em] text-slate-600">
             {profile.role}
           </p>
 
-          <h1 className="font-display text-5xl uppercase leading-[0.9] text-slate-900 sm:text-6xl md:text-7xl">
+          <h1 className="font-display text-4xl uppercase leading-[0.9] text-slate-900 sm:text-5xl md:text-7xl">
             <span className="hero-title-line block">{heroLineOne}</span>
             <span className="hero-title-line block text-stroke">
               {heroLineTwo}
@@ -158,7 +158,7 @@ export default function HeroSection({
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 md:mt-10 grid gap-4 md:grid-cols-3">
           {[
             { label: 'Location', value: profile.location },
             { label: 'Current Role', value: profile.role },
@@ -168,19 +168,19 @@ export default function HeroSection({
               key={item.label}
               whileHover={prefersReducedMotion ? undefined : { y: -6 }}
               whileTap={prefersReducedMotion ? undefined : { scale: 0.99 }}
-              className="hero-card rounded-2xl border border-white/70 bg-white/80 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:border-white hover:brightness-105"
+              className="hero-card rounded-2xl border border-white/70 bg-white/80 p-4 md:p-5 shadow-[0_20px_40px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:border-white hover:brightness-105"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+              <p className="text-[0.65rem] md:text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
                 {item.label}
               </p>
-              <p className="mt-2 text-sm font-semibold text-slate-800">
+              <p className="mt-1 md:mt-2 text-xs md:text-sm font-semibold text-slate-800">
                 {item.value}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="hero-marquee mt-10 rounded-full border border-white/60 bg-white/70 py-3 px-4">
+        <div className="hero-marquee mt-8 md:mt-10 rounded-full border border-white/60 bg-white/70 py-2 px-3 md:py-3 md:px-4">
           <Marquee
             speed={reduceMotion ? 0 : 40}
             play={!reduceMotion}

@@ -16,7 +16,7 @@ export default function AboutSection({
     <section
       id="about"
       ref={registerSection("about")}
-      className="relative scroll-mt-24 bg-white py-24 sm:py-28"
+      className="relative scroll-mt-24 bg-white py-16 sm:py-24 md:py-28"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="container relative mx-auto px-6">
@@ -29,7 +29,7 @@ export default function AboutSection({
       <div className="container relative mx-auto px-6" data-reveal-container>
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <h2
-            className="text-5xl font-display uppercase text-slate-900 md:text-6xl"
+            className="text-4xl sm:text-5xl font-display uppercase text-slate-900 md:text-6xl"
             data-reveal
           >
             Passionate
@@ -68,10 +68,8 @@ export default function AboutSection({
           className="mt-8 max-w-2xl text-base text-slate-600 md:text-lg"
           data-reveal
         >
-          Hi, I am <span className="font-semibold text-slate-900">{profileName}</span>,
-          a fullstack developer who blends clean editorial structure with calm,
-          narrative motion. I design interfaces that breathe, hold whitespace,
-          and guide attention with subtle cues.
+          Halo, saya <span className="font-semibold text-slate-900">{profileName}</span>, seorang <strong>Fullstack Developer</strong> yang menyukai detail.
+          Saya merancang antarmuka yang <strong>clean & intuitive</strong> menggunakan ekosistem React, Flutter, dan modern web stack.
         </p>
 
         <div className="mt-14 text-center" data-reveal>

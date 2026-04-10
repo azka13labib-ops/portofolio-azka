@@ -258,7 +258,7 @@ export default function TechSection({
     <section
       id="tech"
       ref={registerSection("tech")}
-      className="relative min-h-[100vh] scroll-mt-24 bg-white pt-36 pb-24 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32"
+      className="relative min-h-[100vh] scroll-mt-24 bg-white pt-24 pb-16 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 lg:pt-44 lg:pb-32"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="container relative mx-auto px-6">
@@ -270,8 +270,8 @@ export default function TechSection({
 
       <div className="container relative mx-auto px-6" data-reveal-container>
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1fr]">
-          <div className="pt-12 sm:pt-16 lg:pt-24">
-            <h2 className="text-7xl font-display uppercase leading-[0.92] md:text-8xl lg:text-[7rem]">
+          <div className="pt-8 sm:pt-12 md:pt-16 lg:pt-24">
+            <h2 className="text-5xl sm:text-6xl font-display uppercase leading-[0.92] md:text-8xl lg:text-[7rem]">
               <span className="block text-slate-900" data-reveal>
                 Tech
               </span>
@@ -279,12 +279,12 @@ export default function TechSection({
                 Stack
               </span>
             </h2>
-            <p className="mt-10 max-w-md text-lg text-slate-600" data-reveal>
+            <p className="mt-6 sm:mt-10 max-w-md text-base sm:text-lg text-slate-600" data-reveal>
               Tools that keep the workflow lean, expressive, and ready for
               production at scale.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 grid-cols-2 lg:grid-cols-3">
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.name}

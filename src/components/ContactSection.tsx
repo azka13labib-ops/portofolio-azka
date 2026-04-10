@@ -189,7 +189,7 @@ export default function ContactSection({
     <section
       id="contact"
       ref={registerSection('contact')}
-      className="relative scroll-mt-24 bg-white py-24 sm:py-28"
+      className="relative scroll-mt-24 bg-white py-16 sm:py-24 md:py-28"
     >
       {/* ghost background word (unik tapi halus) */}
       <div className="pointer-events-none absolute inset-0">
@@ -208,7 +208,7 @@ export default function ContactSection({
               /// Contact
             </p>
 
-            <h2 className="mt-3 text-5xl font-display uppercase leading-[0.95] text-slate-900 md:text-6xl">
+            <h2 className="mt-3 text-4xl sm:text-5xl font-display uppercase leading-[0.95] text-slate-900 md:text-6xl">
               Hubungi saya
             </h2>
 
