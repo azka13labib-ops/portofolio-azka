@@ -109,7 +109,7 @@ export default function ContactSection({
   const DATA = useMemo(
     () => ({
       githubUser: 'azka13labib-ops',
-      igUser: 'Tryfind.Azka',
+      igUser: 'Azkagantenkbgttt',
       waNumber: '628155761573', // tanpa +, contoh: 6281234567890
       email: 'Azka13labib@gmail.com',
     }),

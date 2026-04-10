@@ -93,35 +93,8 @@ export default function JourneySection({
                   <div className="hidden items-center justify-center lg:flex">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full border border-sky-400 bg-white shadow-[0_0_0_6px_rgba(125,211,252,0.18)]" />
                   </div>
-                  <div
-                    className={`hidden items-start justify-center lg:flex ${
-                      isLeft ? "lg:col-start-3" : "lg:col-start-1"
-                    }`}
-                  >
-                    <motion.div
-                      data-reveal
-                      data-reveal-dir={isLeft ? "right" : "left"}
-                      whileHover={
-                        prefersReducedMotion
-                          ? undefined
-                          : { rotate: 0, scale: 1.03 }
-                      }
-                      whileTap={
-                        prefersReducedMotion ? undefined : { scale: 0.98 }
-                      }
-                      className={`w-48 rounded-[2.2rem] border border-white/70 bg-white/95 p-3 shadow-[0_16px_35px_rgba(15,23,42,0.12)] ${
-                        item.photoRotate ?? ""
-                      }`}
-                      data-drift={`${8 + index * 2}`}
-                    >
-                      <div
-                        className={`h-28 rounded-2xl bg-gradient-to-br ${polaroidTone}`}
-                      />
-                      <p className="mt-3 text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-slate-500">
-                        {item.photoPlaceholder}
-                      </p>
-                    </motion.div>
-                  </div>
+                  {/* Decorative side card removed */}
+                  <div className={`hidden lg:flex ${isLeft ? "lg:col-start-3" : "lg:col-start-1"}`} />
                 </div>
               );
             })}

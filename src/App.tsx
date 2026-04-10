@@ -8,9 +8,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactSection from './components/ContactSection';
 
 import campusPreview from './assets/Screenshot from 2025-12-16 03-09-40.png';
-import kopiPreview from './assets/Screenshot from 2026-01-09 05-07-32.png';
-import goAzkaPreview from './assets/azkago_project_thumb_16x9.png';
-import portfolioPreview from './assets/Screenshot from 2026-01-09 05-11-00.png';
+import kopiPreview from './assets/AzkaSyS.jpeg';
+import goAzkaPreview from './assets/AzkaExplore.jpeg';
+import portfolioPreview from './assets/web-topup.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
@@ -71,7 +71,7 @@ type GithubStats = {
 
 const PROFILE: Profile = {
   name: 'Azka Labib',
-  role: 'Senior Frontend Engineer',
+  role: 'Fullstack Developer',
   location: 'Lumajang, ID',
   status: 'Available for select work',
 };
@@ -79,52 +79,52 @@ const PROFILE: Profile = {
 const PROJECTS: Project[] = [
   {
     no: '01',
-    title: 'Website Kampus',
-    desc: 'Portal kampus dengan informasi akademik, berita, dan struktur fakultas.',
+    title: 'ITB WIGA Website Redesign',
+    desc: 'Platform akademik modern dengan antarmuka yang bersih dan responsif. Mengutamakan kemudahan navigasi untuk menyajikan data universitas, fasilitas, dan pembaruan berita secara interaktif',
     tags: ['Education', 'CMS', 'UI/UX'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0f172a, #1e3a8a, #0b1220)',
     previewImage: campusPreview,
-    role: 'Frontend + UI/UX',
-    stack: ['React', 'Tailwind', 'GSAP'],
-    impact: ['Navigasi lebih jelas', 'Layout lebih konsisten', 'Komponen reusable'],
+    role: 'Front-End & UI/UX Designer',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    impact: ['Sistem Navigasi Intuitif untuk berbagai demografi pengguna (dosen, mahasiswa, pengunjung).', 'Layout lebih konsisten', 'Responsivitas Penuh yang dioptimalkan untuk mobile dan desktop.'],
   },
   {
     no: '02',
-    title: 'Kopi Kenangan Senja',
-    desc: 'Website brand kopi dengan katalog menu, story brand, dan promo musiman.',
-    tags: ['Brand', 'Ecommerce', 'Landing'],
+    title: 'AZKAAA.SYS',
+    desc: 'Dasbor sistem manajemen inventaris dan perdagangan canggih yang dirancang untuk presisi stok, transaksi e-commerce yang mulus, dan efisiensi maksimum dengan jaminan keamanan dan kecepatan.',
+    tags: ['Brand', 'Ecommerce', 'Dashboard'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0b1120, #1d4ed8, #0f172a)',
     previewImage: kopiPreview,
-    role: 'Frontend',
-    stack: ['Vite', 'React', 'Tailwind'],
-    impact: ['Landing lebih cepat', 'Section modular', 'CTA lebih fokus'],
+    role: 'Fullstack',
+    stack: ['React', 'Tailwind', 'PHP'],
+    impact: ['Latensi Transaksi 0ms (Ultra-low Latency with 0ms Transaction Delay).', 'Modul Kontrol Inventaris, Perdagangan, dan Kontrol yang Terintegrasi.', 'Keamanan Data yang Terjamin (Guaranteed Data Security).'],
   },
   {
     no: '03',
-    title: 'GoAzka App',
-    desc: 'Aplikasi mobile untuk layanan internal dengan flow yang cepat dan ringan.',
+    title: 'Azkatravel - Premium Trip Landing Page',
+    desc: 'Platform eksplorasi destinasi wisata yang dirancang dengan antarmuka modern dan menenangkan. Menghadirkan informasi itinerary dan layanan konsultasi dalam tata letak yang bersih dan intuitif.  ',
     tags: ['Mobile', 'Product', 'App UI'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #020617, #0f172a, #2563eb)',
     previewImage: goAzkaPreview,
     previewLayout: 'phone',
-    role: 'UI Engineer',
-    stack: ['React', 'TypeScript', 'Motion'],
-    impact: ['Flow lebih ringkas', 'Micro-interaction halus', 'UI lebih tactile'],
+    role: 'Front-End Developer & UI Designer',
+    stack: ['React', 'Tailwind', 'Framer'],
+    impact: ['Implementasi image text-masking tingkat lanjut pada hero section.', 'Desain tata letak yang clean, modern, dan berfokus pada fotografi destinasi.', 'Penempatan tombol Call-to-Action CTA yang strategis untuk konversi Booking & Konsultasi.'],
   },
   {
     no: '04',
-    title: 'Website Portofolio',
-    desc: 'Portofolio personal dengan transisi editorial dan interaksi mikro.',
-    tags: ['Portfolio', 'Motion', 'Frontend'],
+    title: 'Digital Game Top-Up Platform',
+    desc: 'Platform top-up game dengan antarmuka super responsif, dirancang untuk transaksi kilat dan pengalaman gaming yang seamless',
+    tags: ['E-COMMERCE', 'GAMING', 'Fullstack'],
     url: 'https://example.com',
     previewStyle: 'linear-gradient(135deg, #0b1120, #1f2937, #0b3b7a)',
     previewImage: portfolioPreview,
-    role: 'Design + Frontend',
-    stack: ['React', 'GSAP', 'Framer Motion'],
-    impact: ['Storytelling lebih kuat', 'Animasi lebih rapih', 'Section lebih hidup'],
+    role: 'UI/UX Design & Fullstack Development',
+    stack: ['React', 'Tailwind', 'PHP'],
+    impact: ['Pengelolaan data transaksi yang solid dan aman di sisi backend.', 'Navigasi dinamis dan smooth berbasis komponen React.', 'Desain visual yang menarik dan modern dengan fokus pada pengalaman pengguna.'],
   },
 ];
 
@@ -175,31 +175,31 @@ const TOOL_ICONS: Record<string, string> = {
 
 const JOURNEY: JourneyItem[] = [
   {
-    yearRange: '2017 - 2019',
-    title: 'Visual UI Intern',
-    desc: 'Eksperimen UI editorial dan belajar disiplin grid serta tipografi.',
-    tags: ['HTML', 'CSS', 'Layout'],
+    yearRange: '2024 - 2025',
+    title: 'Front-End Explorer & System Enthusiast',
+    desc: 'Memulai perjalanan di dunia web development dengan membangun fundamental UI yang solid. Di fase ini juga aktif mengeksplorasi sistem operasi, termasuk ricing UI pada environment Linux untuk melatih sense desain.',
+    tags: ['HTML', 'CSS', 'JS', 'LINUX'],
     side: 'left',
   },
   {
-    yearRange: '2019 - 2021',
-    title: 'Frontend Engineer',
-    desc: 'Membangun dashboard client dengan fokus data, QA ketat, dan performa.',
-    tags: ['React', 'GSAP', 'Testing'],
+    yearRange: '2025 - 2026',
+    title: 'Front-End & Logic Foundation',
+    desc: 'Masa di mana fokus utama adalah memperkuat fundamental web development. Banyak bereksperimen dengan struktur antarmuka, styling, dan mulai mengasah logika interaktivitas menggunakan JavaScript dan TypeScript untuk membangun fungsionalitas web yang lebih dinamis.',
+    tags: ['JAVASCRIPT', 'TYPESCRIPT', 'CSS'],
     side: 'right',
   },
   {
-    yearRange: '2021 - 2023',
-    title: 'Senior UI Engineer',
-    desc: 'Mengembangkan design system dan memperkuat konsistensi UI lintas produk.',
-    tags: ['Design System', 'Accessibility', 'Scale'],
+    yearRange: 'Awal 2026',
+    title: 'Fullstack Developer',
+    desc: 'Mengembangkan keahlian ke level fullstack dengan membangun platform e-commerce (Top-Up Game). Fokus pada role-based authentication, database MySQL, dan styling efisien menggunakan framework modern.',
+    tags: ['REACT', 'TAILWIND', 'MYSQL'],
     side: 'left',
   },
   {
-    yearRange: '2023 - Now',
-    title: 'Lead Frontend Engineer',
-    desc: 'Mengarahkan pengalaman produk dengan storytelling dan motion yang calm.',
-    tags: ['Leadership', 'Motion', 'Strategy'],
+    yearRange: '2026 - Sekarang',
+    title: 'Cross-Platform Developer',
+    desc: 'Memperluas jangkauan teknologi ke pengembangan aplikasi mobile dengan Flutter, termasuk eksperimen fitur overlay/floating bubble, serta memperdalam integrasi asinkron dengan Fetch API.',
+    tags: ['FLUTTER', 'TYPESCRIPT', 'API'],
     side: 'right',
   },
 ];
@@ -2384,29 +2384,7 @@ function App() {
                         <span className="flex h-5 w-5 items-center justify-center rounded-full border border-sky-400 bg-white shadow-[0_0_0_6px_rgba(125,211,252,0.2)]" />
                       </div>
 
-                      <div className={`hidden items-start justify-center lg:flex ${isLeft ? 'lg:col-start-3' : 'lg:col-start-1'}`}>
-                        <div
-                          data-reveal
-                          data-reveal-dir={isLeft ? 'right' : 'left'}
-                          data-parallax
-                          data-speed={0.2 + index * 0.05}
-                          data-drift={`${8 + index * 2}`}
-                          className="w-48"
-                        >
-                          <motion.div
-                            whileHover={prefersReducedMotion ? undefined : { rotate: 0, scale: 1.03 }}
-                            whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-                            className={`rounded-[2.2rem] border border-white/70 bg-white/95 p-3 shadow-[0_16px_35px_rgba(15,23,42,0.12)] ${
-                              isLeft ? '-rotate-6' : 'rotate-6'
-                            }`}
-                          >
-                            <div className="h-28 rounded-2xl bg-gradient-to-br from-sky-100 via-white to-slate-100" />
-                            <p className="mt-3 text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-slate-500">
-                              Studio capture
-                            </p>
-                          </motion.div>
-                        </div>
-                      </div>
+                      <div className={`hidden lg:flex ${isLeft ? 'lg:col-start-3' : 'lg:col-start-1'}`} />
                     </div>
                   );
                 })}

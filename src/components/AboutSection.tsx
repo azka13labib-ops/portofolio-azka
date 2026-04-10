@@ -69,7 +69,7 @@ export default function AboutSection({
           data-reveal
         >
           Hi, I am <span className="font-semibold text-slate-900">{profileName}</span>,
-          a frontend engineer who blends clean editorial structure with calm,
+          a fullstack developer who blends clean editorial structure with calm,
           narrative motion. I design interfaces that breathe, hold whitespace,
           and guide attention with subtle cues.
         </p>
